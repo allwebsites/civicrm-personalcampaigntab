@@ -46,7 +46,7 @@ class CRM_Campaigntab_BAO_Campaigntab extends CRM_PCP_BAO_PCP {
 			ORDER BY page_type, page_id";
 
 	    $params = array(1 => array($contactId, 'Integer'));
-	    
+
 	    $pcpInfoDao = CRM_Core_DAO::executeQuery($query, $params);
 	    $pcpInfo = array();
 
@@ -64,6 +64,7 @@ class CRM_Campaigntab_BAO_Campaigntab extends CRM_PCP_BAO_PCP {
 	      
 	      $pcpInfo[] = array(
 	        'pageTitle'        => $pageTitle,
+	        'page_id'          => $pcpInfoDao->page_id,
 	        'pcpId'  	       => $pcpInfoDao->id,
 	        'pcpTitle'         => $pcpInfoDao->title,
 	        'pcpAmount'        => $pcpInfoDao->goal_amount,

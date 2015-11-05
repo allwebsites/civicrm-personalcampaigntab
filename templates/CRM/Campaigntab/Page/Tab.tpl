@@ -17,7 +17,7 @@
     {foreach from=$rows item=row}
     <tr id="row_{$row.id}" class="{$row.class}">
       <td><a href="{crmURL p='civicrm/pcp/info' q="reset=1&id=`$row.pcpId`" fe='true'}" title="{ts}View Personal Campaign Page{/ts}" target="_blank">{$row.pcpTitle}</a></td>
-      <td><a href="{$row.page_url}" title="{ts}View page{/ts}" target="_blank">{$row.pageTitle}</td>
+      <td><a href="{crmURL p='civicrm/contribute/transact' q="reset=1&id=`$row.page_id`" fe='true'}" title="{ts}View page{/ts}" target="_blank">{$row.pageTitle}</td>
       <td>{$row.pcpStatus}</td>
       <td>{$row.pcpReached}</td>
       <td>{$row.pcpAmount}</td>
